@@ -4,7 +4,7 @@ from tkinter import messagebox
 class NotesApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Gestionnaire de Notes")
+        self.root.title("Note Manager")
         
         # Chemin du fichier pour stocker les notes
         self.filename = "data/info.txt"
@@ -67,7 +67,7 @@ class NotesApp:
             self.save_note_to_file(title, encrypted_content)
             self.title_entry.delete(0, tk.END)
             self.content_text.delete("1.0", tk.END)
-            self.key_text.delete(0, tk.END)  # Optionnel : nettoyer le champ de clé après l'ajout
+            self.key_text.delete(0, tk.END)  # Nettoyer le champ de clé après l'ajout
         else:
             messagebox.showwarning("Entrée invalide", "Le titre, le contenu et la clé ne doivent pas être vides!")
 
@@ -90,7 +90,7 @@ class NotesApp:
         self.key_label = tk.Label(self.root, text="Entrez la clé pour déchiffrer la note :")
         self.key_label.pack(pady=5)
         
-        self.key_entry = tk.Entry(self.root, width=50, show="*")  # Utiliser show="*" pour masquer la clé lors de la saisie
+        self.key_entry = tk.Entry(self.root, width=50, show="*")  # show="*" pour masquer la clé lors de la saisie
         self.key_entry.pack(pady=5)
         
         # Ajouter un bouton pour confirmer la clé et cacher les widgets après saisie
